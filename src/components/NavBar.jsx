@@ -2,7 +2,7 @@ import React from 'react';
 import HomePage from './HomePage';
 import Contact from './Contact';
 import Features from './Features';
-import AboutPage from '../../../PRODIGY_WD_01/src/components/AboutPage';
+import AboutPage from './AboutPage';
 
 import {BrowserRouter, Route, Link, Routes} from 'react-router-dom';
 import { useState } from 'react'
