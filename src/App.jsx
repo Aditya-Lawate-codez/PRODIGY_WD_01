@@ -1,9 +1,9 @@
 import React from 'react';
 import Navbar from './components/NavBar';
-import HomePage from './components/HomePage';  // Update this line
-import Features from './components/Features';  // Update this line
+import HomePage from './components/HomePage'; 
+import Features from './components/Features'; 
 import Contact from './Components/Contact';
-import AboutPage from './components/AboutPage';  // Update this line
+import AboutPage from './components/AboutPage'; 
 
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 

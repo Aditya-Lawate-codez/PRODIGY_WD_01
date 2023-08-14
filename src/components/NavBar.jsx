@@ -1,3 +1,10 @@
+import React from 'react';
+import HomePage from './HomePage';
+import Contact from './Contact';
+import Features from './Features';
+import AboutPage from '../../../PRODIGY_WD_01/src/components/AboutPage';
+
+import {BrowserRouter, Route, Link, Routes} from 'react-router-dom';
 import { useState } from 'react'
 import  styles from './Navbar.module.css';
 
@@ -26,30 +33,31 @@ function Navbar() {
     <div className="App">
       <header className="App-header">
 
+       		<BrowserRouter>  
 
         <nav className={`${styles.navbar}`}>
 
 
           {/* logo */}
-          <a href='/' className={`${styles.logo}`}>
+          <Link to='/' className={`${styles.logo}`}>
             <b>
               Woah.io
             </b>
-            </a>
+            </Link>
 
 
           <ul className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
             <li onClick={removeActive}>
-              <a href='/home' className={`${styles.navLink}`} >Home</a>
+               <Link to='/'>Home</Link> 
             </li>
             <li onClick={removeActive}>
-              <a href='/about' className={`${styles.navLink}`}>About Us</a>
+               <Link to='/about'>About</Link> 
             </li>
             <li onClick={removeActive}>
-              <a href='/features' className={`${styles.navLink}`}>Features</a>
+               <Link to='/features'>Features</Link> 
             </li>
             <li onClick={removeActive}>
-              <a href='/contact' className={`${styles.navLink}`}>Contact</a>
+               <Link to='/contact'>Contact</Link> 
             </li>
           </ul>
 
@@ -60,8 +68,14 @@ function Navbar() {
             <span className={`${styles.bar}`}></span>
           </div>
         </nav>
+        <Routes>
+		<Route path="/" element={<HomePage />} />
+             		<Route path="/about" element={<AboutPage />} />
+             		<Route path="/features" element={<Features />} />
+             		<Route path="/contact" element={<Contact />} />
 
-
+           		</Routes>
+</BrowserRouter>
       </header>
     </div>
   );
